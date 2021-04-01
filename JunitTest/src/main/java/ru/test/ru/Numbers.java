@@ -1,3 +1,5 @@
+package ru.test.ru;
+
 public class Numbers {
     public int sum(int N){
         int rez=5;

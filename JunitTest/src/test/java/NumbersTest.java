@@ -1,4 +1,5 @@
 import org.junit.Test;
+import ru.test.ru.Numbers;
 
 import static org.junit.Assert.*;
 

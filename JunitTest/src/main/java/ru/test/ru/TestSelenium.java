@@ -1,3 +1,6 @@
+package ru.test.ru;
+
+import io.cucumber.java.ru.Если;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -16,8 +19,8 @@ import java.util.concurrent.TimeUnit;
 
 public class TestSelenium {
 
-    @Test
-    public void main() throws InterruptedException {
+    @Если("открыть страницу")
+    public void getPage() throws InterruptedException {
     System.setProperty("webdriver.chrome.driver", "/Users/andrei/testrepository2/JunitTest/src/main/resources/drivers/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -56,10 +59,12 @@ public class TestSelenium {
         elementRoll.click();
 
 
-        WebElement selectElem = driver.findElement(By.xpath("//span[@class='AuthSocialBlock-secondaryProviderName']"));
-        Select select = new Select(selectElem);
-        List options = select.getOptions();
-        List selectedOptions = select.getAllSelectedOptions();
-        WebElement selectedOption = select.getFirstSelectedOption();
+//        WebElement selectElem = driver.findElement(By.xpath("//span[@class='AuthSocialBlock-secondaryProviderName']"));
+//        Select select = new Select(selectElem);
+//        List options = select.getOptions();
+//        List selectedOptions = select.getAllSelectedOptions();
+//        WebElement selectedOption = select.getFirstSelectedOption();
+        Thread.sleep(5000);
+        driver.quit();
     }
 }
