@@ -21,7 +21,7 @@ public class TestSelenium {
 
     @Если("открыть страницу")
     public void getPage() throws InterruptedException {
-    System.setProperty("webdriver.chrome.driver", "/Users/andrei/testrepository2/JunitTest/src/main/resources/drivers/chromedriver");
+    System.setProperty("webdriver.chrome.driver", "/Users/andrei/testrepository2/JunitTest/src/test/resources/drivers/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://yandex.ru/");
