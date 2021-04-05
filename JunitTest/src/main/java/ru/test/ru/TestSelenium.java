@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -22,7 +23,9 @@ public class TestSelenium {
     @Если("открыть страницу")
     public void getPage() throws InterruptedException {
     System.setProperty("webdriver.chrome.driver", "/Users/andrei/testrepository2/JunitTest/src/test/resources/drivers/chromedriver");
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors","--disable-extensions","--no-sandbox","--disable-dev-shm-usage");
+        WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://yandex.ru/");
         driver.findElement(By.xpath("//a[@href='https://passport.yandex.ru/auth?origin=home_desktop_ru&retpath=https%3A%2F%2Fmail.yandex.ru%2F&backpath=https%3A%2F%2Fyandex.ru']")).click();
